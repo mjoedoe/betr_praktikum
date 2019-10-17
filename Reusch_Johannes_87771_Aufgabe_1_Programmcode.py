@@ -32,7 +32,7 @@ class EVENT: # EVENT = Eingang
     #??????
    # def topdown(self, mat):
     #    return mat
- 
+ # alskdjajskld
 def  maptree (dot, top):
     dot.node(top.name, top.name)
     if top.nodes :    
