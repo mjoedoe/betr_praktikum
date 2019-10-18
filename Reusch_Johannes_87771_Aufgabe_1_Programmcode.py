@@ -10,7 +10,9 @@ class ANDNODE:
         return
     #???????????????????????????????????
     def topdown(self, mat):
-       return mat
+        for a in self.nodes :
+            mat = a.topdown
+        return mat
    
  
  
@@ -29,23 +31,20 @@ class EVENT: # EVENT = Eingang
     def __init__(self, name):
         self.name = name
         return
-    #??????
-   # def topdown(self, mat):
-    #    return mat
+    # Eingang gibt sich selbst zurück
+    def topdown(self, mat):
+        return [[self.name]]
  # alskdjajskld
-'''
+
 def  maptree (dot, top):
     dot.node(top.name, top.name)
+    # muss noch eckig werden
     if top.nodes :    
         for a in top.nodes :
             dot.edge(top.name + (top.nodes[a]).name)
             maptree(dot,top.nodes[a])
     print(dot.source)
-    dot.render('output')
-'''
-
-
-
+    
 
 
 def main():
@@ -60,8 +59,9 @@ def main():
     print(A.name)
     mat = [[TOP]]
     print(mat)
-  #  dot = gr.Digraph('Baum')
- #   maptree(dot, TOP)
+    dot = gr.Digraph('Baum')
+    maptree(dot, TOP)
+    dot.render('output')
     
 if __name__ == "__main__":
     main()
