@@ -35,14 +35,15 @@ class EVENT: # EVENT = Eingang
     def topdown(self, mat):
         return [[self.name]]
  # alskdjajskld
+ #asdasd
 
-def  maptree (dot, top):
-    dot.node(top.name, top.name)
+def  maptree (dot, punkt):
+    dot.node(punkt.name, punkt.name)
     # muss noch eckig werden
-    if top.nodes :    
-        for a in top.nodes :
-            dot.edge(top.name + (top.nodes[a]).name)
-            maptree(dot,top.nodes[a])
+    for a in punkt.nodes :
+        type(self).__name__ 
+        maptree(dot,punkt.nodes[a])
+        dot.edge(punkt.name + (punkt.nodes[a]).name)
     print(dot.source)
     
 
@@ -61,7 +62,7 @@ def main():
     print(mat)
     dot = gr.Digraph('Baum')
     maptree(dot, TOP)
-    dot.render('output')
+    dot.render('output',view=True)
     
 if __name__ == "__main__":
     main()
