@@ -1,4 +1,5 @@
-import graphviz as gr 
+#import graphviz as gr 
+import numpy as np
 
 
 class ANDNODE:
@@ -8,10 +9,14 @@ class ANDNODE:
     def add(self, node):
         self.nodes.append(node)
         return
-    #???????????????????????????????????
+    #Kombiniere alle Zeilen miteinander
     def topdown(self, mat):
-        for a in self.nodes :
-            mat = a.topdown
+        for a in range(0,lenght(self.nodes) :
+            buf.append(self.nodes[a].topdown())
+        bmat = np.matrix(buf[0])
+        for a in buf[1:] :
+            mx = np.matrix(a)
+
         return mat
    
  
@@ -23,9 +28,11 @@ class ORNODE:
     def add(self, node):
         self.nodes.append(node)
         return
-    #????????????????????????????
-  #  def topdown(self, mat):
-   #     return mat
+    # Zeilen aneinander fügen
+    def topdown(self, mat):
+        for a in self.nodes :
+            mat.append(a.topdown())
+        return mat
    
 class EVENT: # EVENT = Eingang
     def __init__(self, name):
@@ -34,8 +41,6 @@ class EVENT: # EVENT = Eingang
     # Eingang gibt sich selbst zurück
     def topdown(self, mat):
         return [[self.name]]
- # alskdjajskld
- #asdasd
 
 def  maptree (dot, punkt):
     dot.node(punkt.name, punkt.name)
@@ -60,9 +65,9 @@ def main():
     print(A.name)
     mat = [[TOP]]
     print(mat)
-    dot = gr.Digraph('Baum')
-    maptree(dot, TOP)
-    dot.render('output',view=True)
+#    dot = gr.Digraph('Baum')
+#    maptree(dot, TOP)
+#    dot.render('output',view=True)
     
 if __name__ == "__main__":
     main()
