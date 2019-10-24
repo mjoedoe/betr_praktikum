@@ -49,8 +49,9 @@ def  maptree (dot, punkt):
         dot.node(punkt.name, punkt.name)
 
     for a in punkt.nodes : 
-        maptree(dot,punkt.nodes[a])
+        maptree(dot,a)
         dot.edge(punkt.name + a.name)
+
     print(dot.source)
     
 
