@@ -45,10 +45,12 @@ class EVENT: # EVENT = Eingang
 def  maptree (dot, punkt):
     if type(punkt).__name__ != EVENT :
         dot.node(punkt.name, punkt.name, shape = 'box')
-    # muss noch eckig werden
+    else :
+        dot.node(punkt.name, punkt.name)
+
     for a in punkt.nodes : 
         maptree(dot,punkt.nodes[a])
-        dot.edge(punkt.name + (punkt.nodes[a]).name)
+        dot.edge(punkt.name + a.name)
     print(dot.source)
     
 
